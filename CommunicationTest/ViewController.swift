@@ -28,6 +28,8 @@ class ViewController: UIViewController, WCSessionDelegate  {
         //@TODO
     }
     
+    public var pokemonChoice:String = ""
+    
     // MARK: Receive messages from Watch
     // -----------------------------------
     
@@ -102,11 +104,30 @@ class ViewController: UIViewController, WCSessionDelegate  {
     
     @IBAction func pokemonButtonPressed(_ sender: Any) {
         print("You pressed the pokemon button")
+         if (WCSession.default.isReachable == true) {
+            
+            self.pokemonChoice = "pikachu"
+            let message = ["name": self.pokemonChoice]
+        
+            print("You pressed the pokemon/pikachu button")
+            WCSession.default.sendMessage(message, replyHandler: nil)
+
+            }
     }
+        
     @IBAction func caterpieButtonPressed(_ sender: Any) {
         print("You pressed the caterpie button")
+        if (WCSession.default.isReachable == true) {
+            
+            self.pokemonChoice = "caterpie"
+            let message = ["name": self.pokemonChoice]
+        
+            print("You pressed the caterpie button")
+            WCSession.default.sendMessage(message, replyHandler: nil)
+
+            }
+        
     }
     
     
 }
-

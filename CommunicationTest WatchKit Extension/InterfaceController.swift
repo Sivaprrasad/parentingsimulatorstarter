@@ -24,7 +24,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     // Label for other messages (HP:100, Hunger:0)
     @IBOutlet var outputLabel: WKInterfaceLabel!
     
-    
+//    public var pokemonName: String=""
     
     // MARK: Delegate functions
     // ---------------------
@@ -38,8 +38,20 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         print("WATCH: Got message from Phone")
         // Message from phone comes in this format: ["course":"MADT"]
-        let messageBody = message["course"] as! String
-        messageLabel.setText(messageBody)
+        
+//        let messageBody = message["course"] as! String
+//        messageLabel.setText(messageBody)
+        
+        let nameMatch = message["name"]
+        
+        if(nameMatch != nil)
+        {
+            let messageSaved:String = message["name"] as! String
+            var pokemonImage = UIImage(imageLiteralResourceName: messageSaved)
+            self.pokemonImageView.setImage(pokemonImage)
+            
+        }
+        
     }
     
 
@@ -105,6 +117,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     // MARK: Functions for Pokemon Parenting
     @IBAction func nameButtonPressed() {
         print("name button pressed")
+        
     }
 
     @IBAction func startButtonPressed() {
