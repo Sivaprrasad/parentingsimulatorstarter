@@ -126,6 +126,10 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
 
     @IBAction func startButtonPressed() {
         print("Start button pressed")
+        
+        Timer.scheduledTimer(withTimeInterval: 5.0, repeats: true) { timer in
+            self.hunger = self.hunger + 10
+        }
     }
     
     @IBAction func feedButtonPressed() {
@@ -139,12 +143,15 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
         
         if(hunger >= 80){
             health = health - 12
+            
         }
         
     }
     
     @IBAction func hibernateButtonPressed() {
         print("Hibernate button pressed")
+        
+    
         
     }
     
