@@ -12,6 +12,8 @@ import WatchConnectivity
 
 class Screen2Sample: WKInterfaceController, WCSessionDelegate {
     
+    public var pokemonGivenName: String=""
+    
     // MARK: Outlets
     // ---------------------
 
@@ -65,6 +67,22 @@ class Screen2Sample: WKInterfaceController, WCSessionDelegate {
     
     @IBAction func selectNameButtonPressed() {
         print("select name button pressed")
+        
+        // 1. Show the built in UI for accepting user input
+        let cannedResponses = ["Siva", "Prudhvi", "Karthik", "Bala"]
+        presentTextInputController(withSuggestions: cannedResponses, allowedInputMode: .plain) {
+            
+            (results) in
+            
+            if (results != nil && results!.count > 0) {
+                // 2. write your code to process the person's response
+                let userResponse = results?.first as? String
+                print(userResponse!)
+                self.nameLabel.setText(userResponse)
+                self.pokemonGivenName = userResponse!
+                
+            }
+        }
     }
     
 

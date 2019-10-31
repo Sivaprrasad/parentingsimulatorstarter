@@ -24,8 +24,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     // Label for other messages (HP:100, Hunger:0)
     @IBOutlet var outputLabel: WKInterfaceLabel!
     
-//    public var pokemonName: String=""
-    
     // MARK: Delegate functions
     // ---------------------
 
@@ -118,6 +116,9 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     // MARK: Functions for Pokemon Parenting
     @IBAction func nameButtonPressed() {
         print("name button pressed")
+        
+//            pokemonImageView.setImage(pokemonImage)
+//            self.messageLabel.setText("Your selected pokemon is \(messageSaved)")
         
     }
 
