@@ -24,6 +24,11 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     // Label for other messages (HP:100, Hunger:0)
     @IBOutlet var outputLabel: WKInterfaceLabel!
     
+    public var hunger:Int = 0
+    public var health:Int = 100
+    
+    
+    
     // MARK: Delegate functions
     // ---------------------
 
@@ -117,9 +122,6 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     @IBAction func nameButtonPressed() {
         print("name button pressed")
         
-//            pokemonImageView.setImage(pokemonImage)
-//            self.messageLabel.setText("Your selected pokemon is \(messageSaved)")
-        
     }
 
     @IBAction func startButtonPressed() {
@@ -128,10 +130,22 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
     
     @IBAction func feedButtonPressed() {
         print("Feed button pressed")
+        if(health <= 0){
+            print("Your pokemon is Dead")
+        }
+        if(health == 100){
+            print("Your pokemon is Completely healthy")
+        }
+        
+        if(hunger >= 80){
+            health = health - 12
+        }
+        
     }
     
     @IBAction func hibernateButtonPressed() {
         print("Hibernate button pressed")
+        
     }
     
 }

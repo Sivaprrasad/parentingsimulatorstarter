@@ -21,7 +21,7 @@
                                         <action selector="buttonPressed" destination="AgC-eL-Hgc" id="EFk-bs-nx7"/>
                                     </connections>
                                 </button>
-                                <label width="89" height="37" alignment="left" text="Label" numberOfLines="2" minimumScaleFactor="0.5" id="PMJ-75-bao">
+                                <label width="89" height="37" alignment="left" text="Your Selection" numberOfLines="2" minimumScaleFactor="0.5" id="PMJ-75-bao">
                                     <fontDescription key="font" name="Helvetica-Bold" family="Helvetica" pointSize="13"/>
                                 </label>
                             </items>
@@ -77,10 +77,10 @@
             </objects>
             <point key="canvasLocation" x="555" y="31.5"/>
         </scene>
-        <!--Screen2 Sample-->
+        <!--Screen3 Sample-->
         <scene sceneID="rSw-iR-0SS">
             <objects>
-                <controller id="TKJ-vR-82D" customClass="Screen2Sample" customModule="CommunicationTest_WatchKit_Extension">
+                <controller id="TKJ-vR-82D" customClass="Screen3Sample">
                     <items>
                         <button width="1" alignment="left" title="Give me a name" id="aem-N8-vQs">
                             <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -95,6 +95,7 @@
                             <color key="backgroundColor" red="1" green="0.9385274106" blue="0.23414020229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="startButtonPressed" destination="TKJ-vR-82D" id="yIB-Vl-PdC"/>
+                                <segue destination="EXe-rx-xDr" kind="push" id="tos-O1-2a7"/>
                             </connections>
                         </button>
                     </items>
@@ -105,6 +106,36 @@
                 </controller>
             </objects>
             <point key="canvasLocation" x="794" y="50"/>
+        </scene>
+        <!--Screen2 Sample-->
+        <scene sceneID="UcT-u3-BmB">
+            <objects>
+                <controller id="EXe-rx-xDr" customClass="Screen2Sample" customModule="CommunicationTest_WatchKit_Extension">
+                    <items>
+                        <label alignment="left" text="Your Pokemon Name" minimumScaleFactor="0.69999999999999996" id="FJo-Wo-Tsn"/>
+                        <button width="1" alignment="left" title="Feed" id="eWY-KB-5MW">
+                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="selectNameButtonPressed" destination="TKJ-vR-82D" id="4D8-v5-u1a"/>
+                            </connections>
+                        </button>
+                        <imageView alignment="center" id="0vM-Qk-oMd"/>
+                        <label alignment="left" text="Label" id="SgX-ZY-Tpq"/>
+                        <button width="1" alignment="left" title="Hibernate" id="DbY-pU-VpK">
+                            <color key="titleColor" red="0.31372549020000001" green="0.27450980390000002" blue="0.34509803919999998" alpha="1" colorSpace="deviceRGB"/>
+                            <color key="backgroundColor" red="1" green="0.9385274106" blue="0.23414020229999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="startButtonPressed" destination="EXe-rx-xDr" id="Bs4-zx-qov"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="nameLabel" destination="SgX-ZY-Tpq" id="nPh-bJ-omo"/>
+                        <outlet property="pokemonImageView" destination="0vM-Qk-oMd" id="g7U-Zr-4Yy"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1046" y="50"/>
         </scene>
     </scenes>
     <resources>

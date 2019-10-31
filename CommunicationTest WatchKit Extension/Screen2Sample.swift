@@ -29,6 +29,8 @@ class Screen2Sample: WKInterfaceController, WCSessionDelegate {
     // Default function, required by the WCSessionDelegate on the Watch side
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
         //@TODO
+        
+        
     }
     
     // MARK: WatchKit Interface Controller Functions
