@@ -49,6 +49,7 @@ class InterfaceController: WKInterfaceController, WCSessionDelegate {
             let messageSaved:String = message["name"] as! String
             var pokemonImage = UIImage(imageLiteralResourceName: messageSaved)
             self.pokemonImageView.setImage(pokemonImage)
+            self.messageLabel.setText("Your selected pokemon is \(messageSaved)")
             
         }
         
